@@ -1,0 +1,38 @@
+<!-- This file uses bootstrap & fontAwesome so it requires an internet connection -->
+<!-- Chrome has that annoying suggestions in the form. Turned off using autocomplete="off" in input -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/903ee8d7ce.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Todo List</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Todos</h1>
+        <form class="search">
+            <input class="form-control" type="text" name="search" placeholder="search todos" autocomplete="off">
+        </form>
+        
+        <ul class="todos list-group">
+            <li class="list-group-item">
+                <span>Hey! You can add, delete & search for your todos!</span>
+                <i class="delete fas fa-trash"></i>
+            </li>
+        </ul>
+
+        <form class="add">
+            <label>Add a new todo...</label>
+            <input class="form-control" type="text" name="add" placeholder="add todos" autocomplete="off">
+        </form>
+
+    </div>
+    
+    <script src="todos.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+/* I have used !important to override the bootstrap classes */
+
+body {
+    background: #352f5b;
+    color: aliceblue;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 6%;
+}
+
+li {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    background: #423a6f !important;
+}
+
+ul {
+    margin: 9% 0 !important;
+}
+
+input{
+    background: rgba(0, 0, 0, 0.2) !important;
+    border: none !important;
+    color: aliceblue !important;
+}
+
+i {
+    padding-left: 3%;
+}
+
+input:focus {
+    color: aliceblue !important;
+}
+
+.container {
+    align-content: center;
+    max-width: 400px;
+}
+
+.add {
+    text-align: center;
+}
+
+.delete {
+    cursor: pointer;
+}
+
+.remove {
+    display: none !important;
+}
