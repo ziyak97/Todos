@@ -14,24 +14,36 @@ const template = todo => {
     <i class="delete fas fa-trash"></i>
     </li>
     `
+};
+
+// Function for local storage
+const localTodos = localTodos => {
+    todos.innerHTML = localTodos;
+};
+
+// executes if local storage is present (string is a truthy value so if there is a string it executes)
+if (localStorage.length) {
+    localTodos(localStorage.getItem('todos')); // get local storage on page reload
 }
 
 // Used to add todos when I press Enter(could also just make a button but no button looks neater)
 addTodo.addEventListener('submit', e => {
     e.preventDefault(); // prevent reloading of page when i submit form
     const todo = addTodo.add.value.trim(); // value inside the input of the form. trim() removes accidental white spaces
-    if(!todo.length) return; // prevents addition of blank todos
+    if (!todo.length) return; // prevents addition of blank todos
     template(todo); // just calling the above function to add todos
     addTodo.reset(); // reset the form to remove text in input after adding todo
+    localStorage.setItem('todos', todos.innerHTML); // set local storage when form is submited
 });
 
 // Delete todo
 // I gave the trash icon a class of delete
 // I check if you click on the trah icon by using classList & contains
 // Todos is the ul. It checks for class in the ul
-todos.addEventListener('click' , e => {
-    if(e.target.classList.contains('delete')) {
+todos.addEventListener('click', e => {
+    if (e.target.classList.contains('delete')) {
         e.target.parentElement.remove(); // Remove the list which is the parent element of the icon
+        localStorage.setItem('todos', todos.innerHTML); // set local storage on deletion of item
     }
 });
 
